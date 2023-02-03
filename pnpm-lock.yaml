@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   cookie-parser: ~1.4.4
   debug: ~2.6.9
+  dotenv: ^16.0.3
   express: ~4.16.1
   hbs: ~4.0.4
   http-errors: ~1.6.3
@@ -12,6 +13,7 @@ specifiers:
 dependencies:
   cookie-parser: 1.4.6
   debug: 2.6.9
+  dotenv: 16.0.3
   express: 4.16.4
   hbs: 4.0.6
   http-errors: 1.6.3
@@ -180,6 +182,11 @@ packages:
 
   /destroy/1.0.4:
     resolution: {integrity: sha512-3NdhDuEXnfun/z7x9GOElY49LoqVHoGScmOKwmxhsS8N5Y+Z8KyPPDnaSzqWgYt/ji4mqwfTS34Htrk0zPIXVg==}
+    dev: false
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: false
 
   /ee-first/1.1.1:
