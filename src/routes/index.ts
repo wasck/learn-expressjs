@@ -1,7 +1,6 @@
 import express, { Express } from 'express';
-var router = express.Router();
-let root = require('./root');
-let users = require('./users');
+import root from './root';
+import users from './users';
 
 const app: Express = express();
 
@@ -9,4 +8,4 @@ const app: Express = express();
 app.use('/', root);
 app.use('/users', users);
 
-module.exports = app;
+export default app;

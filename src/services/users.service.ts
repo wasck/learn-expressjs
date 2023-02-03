@@ -3,26 +3,22 @@ const fakeUsers = (size = 10) => {
     return {
       id: index,
       name: `name-${++index}`
-    }
-  })
+    };
+  });
 };
 
-function getUsers(size: number) {
-  return fakeUsers(size);
-};
+export default class UserService {
+  public getUsers(size?: number) {
+    return fakeUsers(size);
+  }
 
-function getUserById(userId: string) {
-  const id = parseInt(userId, 10);
-  return fakeUsers().filter(user => user.id === id);
-};
+  public getUserById(userId: string) {
+    const id = parseInt(userId, 10);
+    return fakeUsers().filter(user => user.id === id);
+  }
 
-function deleteById(userId: string) {
-  const id = parseInt(userId, 10);
-  return fakeUsers().filter(user => user.id !== id);
+  public deleteById(userId: string) {
+    const id = parseInt(userId, 10);
+    return fakeUsers().filter(user => user.id !== id);
+  }
 }
-
-module.exports = {
-  getUsers,
-  getUserById,
-  deleteById
-};

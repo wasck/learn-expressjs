@@ -1,12 +1,15 @@
 import express, { Request, Response, NextFunction } from 'express';
-var router = express.Router();
-let { getUsers, getUserById, deleteById } = require('../services/users.service.js');
+import UserService from '../services/users.service';
+
+const router = express.Router();
+const userService = new UserService();
 
 /* GET users listing. */
 router
   .route('/')
   .get((req: Request, res: Response, next: NextFunction) => {
-    res.send(getUsers());
+
+    res.send(userService.getUsers());
     // res.render('users', { users: getUsers() });
   });
 
@@ -15,13 +18,13 @@ router
   .get((req: Request, res: Response, next: NextFunction) => {
     const { userId: id } = req.params;
 
-    res.send(getUserById(id));
+    res.send(userService.getUserById(id));
   })
   .delete((req: Request, res: Response, next: NextFunction) => {
     const { userId: id } = req.params;
 
-    const items = deleteById(id);
+    const items = userService.deleteById(id);
     res.send({ operation: req.method, id, items });
   });
 
-module.exports = router;
+export default router;

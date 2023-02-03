@@ -1,12 +1,12 @@
-var createError = require('http-errors');
+import createError from 'http-errors';
 import express, { Express, Request, Response, NextFunction } from 'express';
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
 
-var indexRouter = require('./routes/index');
+import indexRouter from './routes/index';
 
-var app: Express = express();
+const app: Express = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
