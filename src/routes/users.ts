@@ -18,7 +18,7 @@ router
   .get((req: Request, res: Response, next: NextFunction) => {
     const { userId: id } = req.params;
 
-    res.send(userService.getUserById(id));
+    res.send(userService.getById(id));
   })
   .delete((req: Request, res: Response, next: NextFunction) => {
     const { userId: id } = req.params;

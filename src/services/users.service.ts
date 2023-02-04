@@ -1,3 +1,5 @@
+import { User } from './../model/user.model';
+
 const fakeUsers = (size = 10) => {
   return Array(size).fill(1).map((item, index) => {
     return {
@@ -12,7 +14,7 @@ export default class UserService {
     return fakeUsers(size);
   }
 
-  public getUserById(userId: string) {
+  public getById(userId: string): Array<User> {
     const id = parseInt(userId, 10);
     return fakeUsers().filter(user => user.id === id);
   }
