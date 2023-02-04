@@ -6,10 +6,11 @@
   "scripts": {
     "prepare": "husky install",
     "build:dist": "tsc",
-    "prestart:dev": "npm run build:dist && cp -r src/public ./dist && cp -r src/views ./dist",
+    "prestart:dev": "pnpm run build:dist && cp -r src/public ./dist && cp -r src/views ./dist",
     "start": "node .",
     "start:dev": "concurrently 'tsc --watch' 'DEBUG=learn-expressjs:* nodemon .'",
-    "test": "jest"
+    "test": "jest",
+    "dockerize": "docker build . -t 'learn-expressjs'"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
